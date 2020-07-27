@@ -1,0 +1,21 @@
+header p{
+   line-height: 7px;
+   font-size: 16px;
+   font-weight: lighter;
+}
+
+.probdes, .propapp{
+    padding-top: 1px;
+}
+
+h2{
+    color: navy;
+}
+
+h3 {
+    color: purple;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
