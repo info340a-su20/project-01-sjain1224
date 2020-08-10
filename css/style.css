@@ -205,6 +205,56 @@ footer > p{
     border-radius: 5px;
 }
 
+/*Splash Page */
+.splash-page{
+    background-color: #004ba0;
+}
+
+.splash-h1{
+    color: white;
+}
+
+.site-sub{
+    color: white;
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+.splash-h2{
+    color: white;
+    text-align: center;
+}
+
+.splash-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.location-btn{
+    background-color: #66bb6a;
+    padding: .5rem;
+    border-radius: 25px;
+    margin-right: 3rem;
+    flex-basis: 150px;
+}
+
+.location-btn a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.location-btn:hover{
+    box-shadow: 0 3px 5px rgba(255, 255, 255, 0.5);
+}
+
+.location-btn a:hover, .location-btn a:focus{
+    color: #004ba0;
+}
+
 /* Responsive Design */
 @media (min-width: 598px) {
     .nav-link {
