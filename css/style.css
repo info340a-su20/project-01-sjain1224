@@ -176,8 +176,12 @@ footer > p{
     font-size: 1.25em;
 }
 
-.bus-type{
+.bus-loc{
     font-size: 1em;
+}
+
+.expanded {
+    width: 300px;
 }
 
 .card > img{

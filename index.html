@@ -22,8 +22,7 @@
     <nav>
         <ul>
             <li class="web-name"><a href="splash.html">Local Support </a></li>
-            <li class="nav-link"><a href="sammamish.html">Sammamish</a></li>
-            <li class="nav-link"><a href="index.html">UDistrict</a></li>
+            <li class="nav-link"><a href="index.html">Businesses</a></li>
             <li class="nav-link"><a href="addbusiness.html">Add</a></li>
             <li class="nav-link"><a href="about.html">About</a></li>
         </ul>
@@ -31,101 +30,25 @@
     </nav>
 
     <header>
-        <h1>UDistrict</h1>
-        <p>Thank you for supporting local businesses in the UDistrict! Below, you will find cards for each locally owned business with some basic information. Click on the cards to get even more detailed information! Use the filter on the left to go to a particular section.</p>
+        <h1>Businesses</h1>
+        <p>Thank you for supporting local businesses! Below, you will find cards for each locally owned business with some basic information. Click on the cards to get even more detailed information! Use the filter on the left to go to a particular section.</p>
     </header>
 
     <main>
         <div class="container">
             <section class="filter">
                 <h2>Go To</h2>
-                <ul>
-                    <li class="filter-list"><a href="#rest">Restaurants</a></li>
-                    <li class="filter-list"><a href="#cafe">Cafes</a></li>
-                    <li class="filter-list"><a href="#print">Printing Services</a></li>
-                    <li class="filter-list"><a href="#other">Other</a></li>
+                <ul class="filter-options">
+
+                </ul>
+                <h2>City Sort</h2>
+                <ul class="filter-options">
+
                 </ul>
             </section>
 
-            <section class="bus-cards">
-                <div class="all-cards">
-                    <h2 id="rest">Restaurants</h2>
-                    <div class="row">
-                        <div class="card" tabindex="0">
-                            <img src="img/locations/cafe-on-the-ave.jpg" alt="Cafe on the Ave" aria-hidden="true" class="bus-pic">
-                            <p class="bus-name">Cafe on the Ave</p>
-                            <p class="bus-type">Restaurant</p>
-                        </div>
-
-                        <div class="card" tabindex="0">
-                            <img src="img/locations/cedars.jpg" alt="Cedars Restaurant" aria-hidden="true" class="bus-pic">
-                            <p class="bus-name">Cedar's Restaurant</p>
-                            <p class="bus-type">Restaurant</p>
-                        </div>
-
-                        <div class="card" tabindex="0">
-                            <img src="img/locations/burger hut.jpg" alt="Burger & Kbbob Hut" aria-hidden="true" class="bus-pic">
-                            <p class="bus-name">Burger & Kabob Hut</p>
-                            <p class="bus-type">Restaurant</p>
-                        </div>
-                        <div class="card" tabindex="0">
-                            <img src="img/locations/Aladdin.jpg" alt="Aladdin Gyro-cery" aria-hidden="true" class="bus-pic">
-                            <p class="bus-name">Aladdin Gyro-cery</p>
-                            <p class="bus-type">Restaurant</p>
-                        </div>
-                    </div>
-                    
-                    <h2 id="cafe">Cafes</h2>
-                    <div class="row">
-                        <div class="card" tabindex="0">
-                            <img src="img/locations/Ugly-Mug.jpg" alt="Ugly Mugs" aria-hidden="true" class="bus-pic">
-                            <p class="bus-name">Ugly Mug Cafe</p>
-                            <p class="bus-type">Cafe</p>
-                        </div>
-
-                        <div class="card" tabindex="0">
-                            <img src="img/locations/cafe-solstice.jpg" alt="Cafe Solstice" aria-hidden="true" class="bus-pic">
-                            <p class="bus-name">Cafe Solstice</p>
-                            <p class="bus-type">Cafe</p>
-                        </div>
-
-                        <div class="card" tabindex="0">
-                            <img src="img/locations/allegro.jpg" alt="Cafe Allegro" aria-hidden="true" class="bus-pic">
-                            <p class="bus-name">Cafe Allegro</p>
-                            <p class="bus-type">Cafe</p>
-                        </div>
-                    </div>
-
-                    <h2 id="print">Printing Services</h2>
-                    <div class="row">
-                        <div class="card" tabindex="0">
-                            <img src="img/locations/rams.png" alt="Rams Copy Center" aria-hidden="true" class="bus-pic">
-                            <p class="bus-name">Rams Copy Center</p>
-                            <p class="bus-type">Printing Services</p>
-                        </div>
-
-                        <div class="card" tabindex="0">
-                            <img src="img/locations/pro-print.jpg" alt="Professional Copy 'n Print" aria-hidden="true" class="bus-pic">
-                            <p class="bus-name">Professional Copy 'n Print</p>
-                            <p class="bus-type">Printing Services</p>
-                        </div>
-
-                        <div class="card" tabindex="0">
-                            <img src="img/locations/rainier-logo.png" alt="Rainier Copy and Print" aria-hidden="true" class="bus-pic">
-                            <p class="bus-name">Rainier Copy and Print</p>
-                            <p class="bus-type">Printing Services</p>
-                        </div>
-                    </div>
-                    
-                    <h2 id="other">Other</h2>
-                    <div class="row">
-                        <div class="card" tabindex="0">
-                            <img src="img/locations/magus-books.jpg" alt="Magus Books" aria-hidden="true" class="bus-pic">
-                            <p class="bus-name">Magus Books</p>
-                            <p class="bus-type">Bookstore</p>
-                        </div>
-                    </div>
-                </div>
+            <section class="bus-cards" id="addCards">
+                
             </section>
         </div>
     </main>
@@ -134,5 +57,11 @@
         <p class="portfolio">Created by <a href="https://www.jainsid.com" target="_blank"> Siddhant Jain </a>. Copyright 2020. Made for INFO 340 Summer 2020. </p>
         <p class="portfolio">All images "Free to Use" and belong to <a href="imgattributions.html">their respective owners </a></p>
     </footer>
+
+    <script src="js/index.js"></script>
+
+    <!-- Polyfills-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js" integrity="sha512-IsoGB9P1Kjw962zrslxT91OfoKkAnlBfQDdh5HwFvOxwJ8xGV6MuDeAli4TkEMiUqhJVkvpxJBsIS14bSERgxA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.2.8/es6-promise.min.js" integrity="sha512-JMK7ImCd/9VxQM7FWvAT3njqo5iGKkWcOax6Bwzuq48xxFd7/jekKcgN+59ZRwBoEpZvv6Jkwh3fDGrBVWX5vA==" crossorigin="anonymous"></script>
 </body>
 </html>
