@@ -82,7 +82,7 @@
                 },
                 {
                     "name": "Ugly Mug Cafe",
-                    "pic": "img/locations/Ugly-Mug.jpg",
+                    "pic": "img/locations/uglymug.jpg",
                     "type": "Cafe",
                     "rating": 5,
                     "location": "UDistrict"
