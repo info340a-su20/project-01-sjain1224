@@ -54,12 +54,7 @@ nav a {
     text-decoration: none;
 }
 
-nav a:hover, nav a:focus{
-    color: #66bb6a;
-    border-bottom: #66bb6a solid .1rem;
-}
-
-.web-name a, .web-name a:hover, .web-name a:focus{
+.web-name a{
     color: #66bb6a;
     border-bottom: none;
 }
@@ -106,12 +101,6 @@ footer > p{
     color: #66bb6a;
 }
 
-.portfolio a:hover, .portfolio a:focus{
-    color: white;
-    border-bottom: white solid .1rem;
-    text-decoration: none;
-}
-
 /* Filter */
 .filter {
     flex-basis: 200px;
@@ -131,11 +120,6 @@ footer > p{
     list-style-type: none;
     margin-bottom: .5rem;
     font-size: 1.1rem;
-}
-
-.filter a:hover, .filter a:focus{
-    color: #004ba0;
-    font-size: 1.2rem;
 }
 
 .filter > h2{
@@ -188,11 +172,6 @@ footer > p{
     width: 200px;
     height: 150px;
     border-radius: 15px 15px 0 0;
-}
-
-.card:hover, .card:focus{
-    background-color: #66bb6a;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, .5);
 }
 
 /* Add a Business Form */
@@ -255,14 +234,6 @@ footer > p{
     font-size: 1.5rem;
 }
 
-.location-btn:hover{
-    box-shadow: 0 3px 5px rgba(255, 255, 255, 0.5);
-}
-
-.location-btn a:hover, .location-btn a:focus{
-    color: #004ba0;
-}
-
 .citations{
     margin-left: 10px;
     display: block;
@@ -280,6 +251,41 @@ footer > p{
 .citations > h3{
     margin-bottom: 5px;
     margin-top: 15px;
+}
+
+/* Hovers, Actives, and Focus to avoid some weird JEST errors */
+nav a:hover, nav a:focus{
+    color: #66bb6a;
+    border-bottom: #66bb6a solid .1rem;
+}
+
+.web-name a:hover, .web-name a:focus{
+    color: #66bb6a;
+    border-bottom: none;
+}
+
+.portfolio a:hover, .portfolio a:focus{
+    color: white;
+    border-bottom: white solid .1rem;
+    text-decoration: none;
+}
+
+.filter a:hover, .filter a:focus{
+    color: #004ba0;
+    font-size: 1.2rem;
+}
+
+.card:hover, .card:focus{
+    background-color: #66bb6a;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .5);
+}
+
+.location-btn:hover{
+    box-shadow: 0 3px 5px rgba(255, 255, 255, 0.5);
+}
+
+.location-btn a:hover, .location-btn a:focus{
+    color: #004ba0;
 }
 
 /* Responsive Design */
