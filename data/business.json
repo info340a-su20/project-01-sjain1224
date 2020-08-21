@@ -1,162 +1,156 @@
 {
     "data":  [
-            [
-                {
-                    "name": "Aladdin Gyro-cery",
-                    "pic": "img/locations/Aladdin.jpg",
-                    "type": "Restaurant",
-                    "rating": 5,
-                    "location": "UDistrict"
-                },
-                {
-                    "name": "August Moon",
-                    "pic": "img/locations/august-moon.jpg",
-                    "type": "Restaurant",
-                    "rating": 5,
-                    "location": "Sammamish"
-                },
-                {
-                    "name": "Burger & Kabob Hut",
-                    "pic": "img/locations/burger hut.jpg",
-                    "type": "Restaurant",
-                    "rating": 5,
-                    "location": "UDistrict"
-                },
-                {
-                    "name": "Cafe on the Ave",
-                    "pic": "img/locations/cafe-on-the-ave.jpg",
-                    "type": "Restaurant",
-                    "rating": 5,
-                    "location": "UDistrict"
-                },
-                {
-                    "name": "Cedar's Restaurant",
-                    "pic": "img/locations/cedars.jpg",
-                    "type": "Restaurant",
-                    "rating": 5,
-                    "location": "UDistrict"
-                },
-                {
-                    "name": "Lanponi Thai Restaurant",
-                    "pic": "img/locations/Lanponi.jpg",
-                    "type": "Restaurant",
-                    "rating": 5,
-                    "location": "Sammamish"
-                },
-                {
-                    "name": "Pine Lake Ale House",
-                    "pic": "img/locations/pl-ale-house.jpg",
-                    "type": "Restaurant",
-                    "rating": 5,
-                    "location": "Sammamish"
-                },
-                {
-                    "name": "Pine Lake Pizzeria",
-                    "pic": "img/locations/pl-pizzeria.jpg",
-                    "type": "Restaurant",
-                    "rating": 5,
-                    "location": "Sammamish"
-                },
-                {
-                    "name": "Tanoor",
-                    "pic": "img/locations/tanoor.jpg",
-                    "type": "Restaurant",
-                    "rating": 5,
-                    "location": "Sammamish"
-                }
-            ],
-            [
-                {
-                    "name": "Cafe Allegro",
-                    "pic": "img/locations/allegro.jpg",
-                    "type": "Cafe",
-                    "rating": 5,
-                    "location": "UDistrict"
-                },
-                {
-                    "name": "Cafe Solstice",
-                    "pic": "img/locations/cafe-solstice.jpg",
-                    "type": "Cafe",
-                    "rating": 5,
-                    "location": "UDistrict"
-                },
-                {
-                    "name": "Ugly Mug Cafe",
-                    "pic": "img/locations/uglymug.jpg",
-                    "type": "Cafe",
-                    "rating": 5,
-                    "location": "UDistrict"
-                }
-            ],
-            [
-                {
-                    "name": "Mail Post & Copies",
-                    "pic": "img/locations/mail-post.jpg",
-                    "type": "Printing Services",
-                    "rating": 5,
-                    "location": "Sammamish"
-                },
-                {
-                    "name": "Professional Copy 'n Print",
-                    "pic": "img/locations/pro-print.jpg",
-                    "type": "Printing Services",
-                    "rating": 5,
-                    "location": "UDistrict"
-                },
-                {
-                    "name": "Rainier Copy and Print",
-                    "pic": "img/locations/rainier-logo.png",
-                    "type": "Printing Services",
-                    "rating": 5,
-                    "location": "UDistrict"
-                },
-                {
-                    "name": "Rams Copy Center",
-                    "pic": "img/locations/rams.png",
-                    "type": "Printing Services",
-                    "rating": 5,
-                    "location": "UDistrict"
-                }
-            ],
-            [
-                {
-                    "name": "Magus Books",
-                    "pic": "img/locations/magus-books.jpg",
-                    "type": "Bookstore",
-                    "rating": 5,
-                    "location": "UDistrict"
-                }
-            ],
-            [
-                {
-                    "name": "Issaquah Nails",
-                    "pic": "img/locations/iss-nails.jpg",
-                    "type": "Salon",
-                    "rating": 5,
-                    "location": "Sammamish"
-                },
-                {
-                    "name": "Salon 074",
-                    "pic": "img/locations/074salonlogo.png",
-                    "type": "Salon",
-                    "rating": 5,
-                    "location": "Sammamish"
-                }
-            ],
-            [
-                {
-                    "name": "Moore Brothers Music",
-                    "pic": "img/locations/moore brother.jpg",
-                    "type": "Music",
-                    "rating": 5,
-                    "location": "Sammamish"
-                }
-            ]
+        [
+            {
+                "name": "Aladdin Gyro-cery",
+                "pic": "img/locations/Aladdin.jpg",
+                "type": "Restaurant",
+                "rating": 5,
+                "location": "UDistrict"
+            },
+            {
+                "name": "August Moon",
+                "pic": "img/locations/august-moon.jpg",
+                "type": "Restaurant",
+                "rating": 5,
+                "location": "Sammamish"
+            },
+            {
+                "name": "Burger & Kabob Hut",
+                "pic": "img/locations/burger hut.jpg",
+                "type": "Restaurant",
+                "rating": 5,
+                "location": "UDistrict"
+            },
+            {
+                "name": "Cafe on the Ave",
+                "pic": "img/locations/cafe-on-the-ave.jpg",
+                "type": "Restaurant",
+                "rating": 5,
+                "location": "UDistrict"
+            },
+            {
+                "name": "Cedar's Restaurant",
+                "pic": "img/locations/cedars.jpg",
+                "type": "Restaurant",
+                "rating": 5,
+                "location": "UDistrict"
+            },
+            {
+                "name": "Lanponi Thai Restaurant",
+                "pic": "img/locations/Lanponi.jpg",
+                "type": "Restaurant",
+                "rating": 5,
+                "location": "Sammamish"
+            },
+            {
+                "name": "Pine Lake Ale House",
+                "pic": "img/locations/pl-ale-house.jpg",
+                "type": "Restaurant",
+                "rating": 5,
+                "location": "Sammamish"
+            },
+            {
+                "name": "Pine Lake Pizzeria",
+                "pic": "img/locations/pl-pizzeria.jpg",
+                "type": "Restaurant",
+                "rating": 5,
+                "location": "Sammamish"
+            },
+            {
+                "name": "Tanoor",
+                "pic": "img/locations/tanoor.jpg",
+                "type": "Restaurant",
+                "rating": 5,
+                "location": "Sammamish"
+            }
         ],
-        "cities": [
-            "Sammamish",
-            "UDistrict",
-            "View All"
-        ]
-    
+        [
+            {
+                "name": "Cafe Allegro",
+                "pic": "img/locations/allegro.jpg",
+                "type": "Cafe",
+                "rating": 5,
+                "location": "UDistrict"
+            },
+            {
+                "name": "Cafe Solstice",
+                "pic": "img/locations/cafe-solstice.jpg",
+                "type": "Cafe",
+                "rating": 5,
+                "location": "UDistrict"
+            },
+            {
+                "name": "Ugly Mug Cafe",
+                "pic": "img/locations/uglymug.jpg",
+                "type": "Cafe",
+                "rating": 5,
+                "location": "UDistrict"
+            }
+        ],
+        [
+            {
+                "name": "Mail Post & Copies",
+                "pic": "img/locations/mail-post.jpg",
+                "type": "Printing Services",
+                "rating": 5,
+                "location": "Sammamish"
+            },
+            {
+                "name": "Professional Copy 'n Print",
+                "pic": "img/locations/pro-print.jpg",
+                "type": "Printing Services",
+                "rating": 5,
+                "location": "UDistrict"
+            },
+            {
+                "name": "Rainier Copy and Print",
+                "pic": "img/locations/rainier-logo.png",
+                "type": "Printing Services",
+                "rating": 5,
+                "location": "UDistrict"
+            },
+            {
+                "name": "Rams Copy Center",
+                "pic": "img/locations/rams.png",
+                "type": "Printing Services",
+                "rating": 5,
+                "location": "UDistrict"
+            }
+        ],
+        [
+            {
+                "name": "Magus Books",
+                "pic": "img/locations/magus-books.jpg",
+                "type": "Bookstore",
+                "rating": 5,
+                "location": "UDistrict"
+            }
+        ],
+        [
+            {
+                "name": "Issaquah Nails",
+                "pic": "img/locations/iss-nails.jpg",
+                "type": "Salon",
+                "rating": 5,
+                "location": "Sammamish"
+            },
+            {
+                "name": "Salon 074",
+                "pic": "img/locations/074salonlogo.png",
+                "type": "Salon",
+                "rating": 5,
+                "location": "Sammamish"
+            }
+        ],
+        [
+            {
+                "name": "Moore Brothers Music",
+                "pic": "img/locations/moore brother.jpg",
+                "type": "Music",
+                "rating": 5,
+                "location": "Sammamish"
+            }
+        ]  
+    ]
 }

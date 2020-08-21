@@ -22,7 +22,7 @@
     <nav>
         <ul>
             <li class="web-name"><a href="splash.html">Local Support </a></li>
-            <li class="nav-link"><a href="index.html">UDistrict</a></li>
+            <li class="nav-link"><a href="index.html">Businesses</a></li>
             <li class="nav-link"><a href="addbusiness.html">Add</a></li>
             <li class="nav-link"><a href="about.html">About</a></li>
         </ul>
@@ -35,23 +35,34 @@
     </header>
 
     <main>
-        <h2 class="form-title">Business Addition Form</h2>
-        <form class= "form-area">
-            <div class="form-field">
-                <label for="bus_name">Business Name: </label> <input id="bus_name" type="text" placeholder="Business Name" name="busName">
-            </div>
+        <div>
+            <h2 class="form-title">Business Addition Form</h2>
+            <form class= "form-area">
+                <div class="form-field">
+                    <label for="bus_name">Business Name: </label> <input id="bus_name" type="text" placeholder="Business Name" name="busName">
+                </div>
 
-            <div class="form-field">
-                <label for="bus_type">Business Type: </label> <input type="text" id="bus_type" placeholder="Cafe" name="password">
-            </div>
+                <div class="form-field">
+                    <label for="bus_type">Business Type: </label> <input type="text" id="bus_type" placeholder="Cafe" name="type">
+                </div>
 
-            <div class="form-field">
-                <label for="info_field">Other Information:</label>
-                <textarea class="form-control" name="information" id="info_field" placeholder="What else would you like us to know?"></textarea>
-            </div>
+                <div class="form-field">
+                    <label for="bus_location">Business Location: </label> <input type="text" id="bus_location" placeholder="UDistrict" name="location">
+                </div>
 
-            <button type="submit" class="btn">Submit</button>
-          </form>
+                <div class="form-field">
+                    <label for="info_field">Other Information:</label>
+                    <textarea class="form-control" name="information" id="info_field" placeholder="What else would you like us to know?"></textarea>
+                </div>
+
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+            <h2 class="form-title"> You have Added:</h2>
+            <ol class="user-biz">
+
+            </ol>
+        </div>
     </main>
 
     <footer>

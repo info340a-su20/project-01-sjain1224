@@ -2,6 +2,7 @@
 
 const state = {
     data: {},
+    currentdata: [],
     filter: false
 }
 
@@ -27,19 +28,7 @@ function renderCard(busObj) {
     newCard.appendChild(busLoc);
 
     newCard.addEventListener('click', () => {
-        newCard.classList.toggle('expand');
-        
-        if (newCard.classList.contains('expand')) {
-            newCard.classList.add('expanded');
-            let moreinfo = document.createElement('p');
-            if (moreinfo.textContent == ""){ 
-                moreinfo.textContent = "Stars: " + busObj.rating;
-            } else {
-                moreinfo.textContent= "";
-                console.log("I worked");
-            }
-            newCard.appendChild(moreinfo)
-        }
+        renderModelContent(busObj);
     })
 
     return newCard;
@@ -55,8 +44,6 @@ function renderSection(sectArray) {
         newSect.appendChild(aCard);
     }
 
-    searchBusiness(sectArray, newSect);
-
     return newSect;
 }
 
@@ -65,6 +52,8 @@ function renderAll(allObj) {
 
     let display = document.createElement('div');
     display.classList.add('all-cards');
+
+    console.log(allObj);
 
     for(let section of allObj){       
         let sectHeader = document.createElement('h2');
@@ -80,41 +69,52 @@ function renderAll(allObj) {
     addAllCardObj.appendChild(display);
 }
 
-function searchBusiness(sectionArray, parentDOM){
+function searchBusiness(){
+    let searchCards = document.querySelector('#addCards');
+
+    let searchRes = document.createElement('div');
+    searchRes.classList.add('row');
+
     let searchBtn = document.querySelector('#search-btn');
     searchBtn.addEventListener('click', (event) => {
         event.preventDefault();
         state.filter = true;
-        parentDOM.innerHTML = "";
+        searchCards.innerHTML = "";
         let userSearch = document.querySelector("#search-input");
         let restName = userSearch.value.toLowerCase();
         let counter = 0;
-        sectionArray.filter(() => {
-            for(let eachRest of sectionArray) {
-                let objName = eachRest.name.toLowerCase();
-                if (objName.includes(restName) == true){
-                    counter = counter + 1;
-                    let aCard = renderCard(eachRest)
-                    parentDOM.appendChild(aCard);
+        let newArray = [];
+        for (let sectionArray of state.data.data) {
+            sectionArray.filter(() => {
+                for(let eachRest of sectionArray) {
+                    let objName = eachRest.name.toLowerCase();
+                    if (objName.includes(restName) == true){
+                        newArray.push(eachRest);
+                        counter = counter + 1;
+                        let aCard = renderCard(eachRest)
+                        searchRes.appendChild(aCard);
+                    }
                 }
-            }
-            if (counter == 0){
-                let emptyMsg = document.createElement('p');
-                emptyMsg.textContent = "No " + sectionArray[0].type + " containing '" + restName + "' found.";
-                parentDOM.appendChild(emptyMsg);
-            }
-        })
+                if (counter == 0){
+                    let emptyMsg = document.createElement('p');
+                    emptyMsg.textContent = "No " + sectionArray[0].type + " containing '" + restName + "' found.";
+                    searchCards.appendChild(emptyMsg);
+                }
+                searchCards.appendChild(searchRes);
+            })
+        }
+        state.currentdata = newArray;
+        console.log(newArray)
+        renderSection(state.currentdata.data);
     })
 
     let resetBtn = document.querySelector('#reset-btn');
     resetBtn.addEventListener('click', (event) => {
         event.preventDefault();
         state.filter = false;
-        parentDOM.innerHTML = "";
-        for(let each of sectionArray){
-            let aCard = renderCard(each)
-            parentDOM.appendChild(aCard);
-        }
+        state.currentdata = state.data;
+        searchCards.innerHTML = "";
+        renderAll(state.currentdata.data)
     })
 }
 
@@ -138,6 +138,22 @@ function goToItems(allObj) {
     }
 }
 
+function renderModelBg() {
+    let modalBackground = document.querySelector("#cardModal");
+    modalBackground.style.display = "block";
+    
+    modalBackground.addEventListener('click', (event) => {
+        modalBackground.style.display = "none";
+    })
+}
+
+function renderModelContent(cardObj) {
+    renderModelBg();
+    let modelContent = document.querySelector(".model-content");
+
+    
+}
+
 fetch('data/business.json')
     .then(function(response) {
        return response.json();
@@ -146,4 +162,5 @@ fetch('data/business.json')
         state.data = data;
         renderAll(data.data);
         goToItems(data.data);
+        searchBusiness();
     })
