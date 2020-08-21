@@ -111,12 +111,12 @@ footer > p{
     border-radius: 0 15px 15px 0;
 }
 
-.filter a {
+.filter-options a {
     color: white;
     text-decoration: none;
 }
 
-.filter li{
+.filter-list{
     list-style-type: none;
     margin-bottom: .5rem;
     font-size: 1.1rem;
@@ -125,6 +125,7 @@ footer > p{
 .filter > h2{
     color: white;
 }
+
 
 /* Cards */
 .bus-cards{
@@ -254,6 +255,15 @@ footer > p{
 }
 
 /* Hovers, Actives, and Focus to avoid some weird JEST errors */
+
+.btn-primary{
+    background-color: #004ba0;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #002571;
+}
+
 nav a:hover, nav a:focus{
     color: #66bb6a;
     border-bottom: #66bb6a solid .1rem;
@@ -270,7 +280,7 @@ nav a:hover, nav a:focus{
     text-decoration: none;
 }
 
-.filter a:hover, .filter a:focus{
+.filter-options a:hover, .filter-options a:focus{
     color: #004ba0;
     font-size: 1.2rem;
 }

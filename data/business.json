@@ -152,6 +152,11 @@
                     "location": "Sammamish"
                 }
             ]
+        ],
+        "cities": [
+            "Sammamish",
+            "UDistrict",
+            "View All"
         ]
     
 }
