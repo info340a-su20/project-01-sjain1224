@@ -132,6 +132,11 @@ footer > p{
 
 
 /* Cards */
+.biz-sub {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
 .bus-cards{
     flex: 1;
     padding-left: 1em;
@@ -433,11 +438,8 @@ nav a:hover, nav a:focus, .form-add:hover, .form-add:focus{
     }
 
     .card-col-2 {
-        margin-left: 50px;
-    }
-
-    .card-col-2 {
         flex-grow: 1;
+        margin-left: 50px;
     }
     
     .modal-img {
