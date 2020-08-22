@@ -5,64 +5,99 @@
                 "name": "Aladdin Gyro-cery",
                 "pic": "img/locations/Aladdin.jpg",
                 "type": "Restaurant",
-                "rating": 5,
-                "location": "UDistrict"
+                "rating": 4,
+                "location": "UDistrict",
+                "website": "https://www.facebook.com/Aladdin-Gyro-cery-461492295031/",
+                "tel": "(206) 632-5253",
+                "menu": "https://www.yelp.com/menu/aladdin-gyro-cery-seattle",
+                "dining": "Delivery, Take Out"
             },
             {
                 "name": "August Moon",
                 "pic": "img/locations/august-moon.jpg",
                 "type": "Restaurant",
-                "rating": 5,
-                "location": "Sammamish"
+                "rating": 3.5,
+                "location": "Sammamish",
+                "website": "http://www.myaugustmoon.com/",
+                "tel": "425.391.8888",
+                "dining": "Dine-In, Delivery, Take Out"
             },
             {
                 "name": "Burger & Kabob Hut",
                 "pic": "img/locations/burger hut.jpg",
                 "type": "Restaurant",
-                "rating": 5,
-                "location": "UDistrict"
+                "rating": 4,
+                "location": "UDistrict",
+                "website": "http://www.burgerandkabobhut.com/",
+                "tel": "(206) 632-0324",
+                "menu": "https://www.zomato.com/seattle/burger-and-kabob-hut-seattle/menu",
+                "dining": "Dine In, Take Out, Delivery"
             },
             {
                 "name": "Cafe on the Ave",
                 "pic": "img/locations/cafe-on-the-ave.jpg",
                 "type": "Restaurant",
-                "rating": 5,
-                "location": "UDistrict"
+                "rating": 3,
+                "location": "UDistrict",
+                "website": "https://www.facebook.com/Cafe-on-the-Ave-123777417636859/",
+                "tel": "(206) 632-6001",
+                "menu": "https://locu.com/places/cafe-on-the-ave-seattle-us/",
+                "dining": "Curbside Pickup, Dine-In, Delivery, Take Out"
             },
             {
                 "name": "Cedar's Restaurant",
                 "pic": "img/locations/cedars.jpg",
                 "type": "Restaurant",
-                "rating": 5,
-                "location": "UDistrict"
+                "rating": 4,
+                "location": "UDistrict",
+                "website": "https://cedarsseattle.com/",
+                "tel": "(206) 527-5247",
+                "menu": "https://cedarsseattle.com/menu/",
+                "dining": "Dine-In, Delivery, Outdoor Seating, Take Out"
             },
             {
                 "name": "Lanponi Thai Restaurant",
                 "pic": "img/locations/Lanponi.jpg",
                 "type": "Restaurant",
-                "rating": 5,
-                "location": "Sammamish"
+                "rating": 3,
+                "location": "Sammamish",
+                "website": "http://lanponi.blogspot.com/",
+                "tel": "(425) 836-3138",
+                "menu": "https://www.zomato.com/sammamish-wa/lanponi-thai-restaurant-sammamish/menu",
+                "dining": "Delivery, Take Out"
             },
             {
                 "name": "Pine Lake Ale House",
                 "pic": "img/locations/pl-ale-house.jpg",
                 "type": "Restaurant",
-                "rating": 5,
-                "location": "Sammamish"
+                "rating": 3.5,
+                "location": "Sammamish",
+                "website": "http://pinelakealehouse.com/",
+                "tel": "(425) 898-9099",
+                "menu": "http://pinelakealehouse.com/the-food/",
+                "dining": "Dine In, Delivery, Take Out"
             },
             {
                 "name": "Pine Lake Pizzeria",
                 "pic": "img/locations/pl-pizzeria.jpg",
                 "type": "Restaurant",
-                "rating": 5,
-                "location": "Sammamish"
+                "rating": 3.5,
+                "location": "Sammamish",
+                "website": "https://www.pinelakepizza.com/",
+                "tel": "(425) 549-4612",
+                "menu": "https://www.pinelakepizza.com/menus/",
+                "dining": "CLOSED FOR MAINTAINENCE TIL AUG 31ST! Dine-In, Delivery, Take Out"
             },
             {
                 "name": "Tanoor",
                 "pic": "img/locations/tanoor.jpg",
                 "type": "Restaurant",
-                "rating": 5,
-                "location": "Sammamish"
+                "rating": 4,
+                "location": "Sammamish",
+                "website": "https://www.tanoor.com/",
+                "tel": "(425) 961-0831",
+                "menu": "https://www.tanoor.com/menu.html",
+                "dining": "DIne-In, Delivery, Take Out"
             }
         ],
         [
@@ -70,22 +105,34 @@
                 "name": "Cafe Allegro",
                 "pic": "img/locations/allegro.jpg",
                 "type": "Cafe",
-                "rating": 5,
-                "location": "UDistrict"
+                "rating": 3.5,
+                "location": "UDistrict",
+                "website": "https://seattleallegro.com/",
+                "tel": "(206) 633-3030",
+                "menu": "https://locu.com/places/cafe-allegro-seattle-us/",
+                "dining": "Dine-In, Takeout"
             },
             {
                 "name": "Cafe Solstice",
                 "pic": "img/locations/cafe-solstice.jpg",
                 "type": "Cafe",
-                "rating": 5,
-                "location": "UDistrict"
+                "rating": 3.55,
+                "location": "UDistrict",
+                "website": "https://www.cafesolsticeseattle.com/",
+                "tel": "(206) 675-0850",
+                "menu": "https://www.allmenus.com/wa/seattle/273232-cafe-solstice/menu/",
+                "dining": "Dine-In, Take Out"
             },
             {
                 "name": "Ugly Mug Cafe",
                 "pic": "img/locations/uglymug.jpg",
                 "type": "Cafe",
-                "rating": 5,
-                "location": "UDistrict"
+                "rating": 4.5,
+                "location": "UDistrict",
+                "website": "https://uglymugseattle.com/",
+                "tel": "(206) 547-3219",
+                "menu": "https://uglymugseattle.com/menu",
+                "dining": "Dine-In, Take Out"
             }
         ],
         [
@@ -93,29 +140,37 @@
                 "name": "Mail Post & Copies",
                 "pic": "img/locations/mail-post.jpg",
                 "type": "Printing Services",
-                "rating": 5,
-                "location": "Sammamish"
+                "rating": 4,
+                "location": "Sammamish",
+                "website": "https://www.mail-post.com/",
+                "tel": "(425) 868-0887"
             },
             {
                 "name": "Professional Copy 'n Print",
                 "pic": "img/locations/pro-print.jpg",
                 "type": "Printing Services",
-                "rating": 5,
-                "location": "UDistrict"
+                "rating": 3,
+                "location": "UDistrict",
+                "website": "http://qcnp.com/",
+                "tel": "(206) 634-2689"
             },
             {
                 "name": "Rainier Copy and Print",
                 "pic": "img/locations/rainier-logo.png",
                 "type": "Printing Services",
-                "rating": 5,
-                "location": "UDistrict"
+                "rating": 3.5,
+                "location": "UDistrict",
+                "website": "http://www.rainiercopy.com/",
+                "tel": "(206) 280-4666"
             },
             {
                 "name": "Rams Copy Center",
                 "pic": "img/locations/rams.png",
                 "type": "Printing Services",
-                "rating": 5,
-                "location": "UDistrict"
+                "rating": 4,
+                "location": "UDistrict",
+                "website": "https://www.ramscopy.com/",
+                "tel": "(206) 632-6630"
             }
         ],
         [
@@ -123,8 +178,10 @@
                 "name": "Magus Books",
                 "pic": "img/locations/magus-books.jpg",
                 "type": "Bookstore",
-                "rating": 5,
-                "location": "UDistrict"
+                "rating": 4.5,
+                "location": "UDistrict",
+                "website": "https://www.magusbooksseattle.com/",
+                "tel": "(206) 633-1800"
             }
         ],
         [
@@ -132,15 +189,18 @@
                 "name": "Issaquah Nails",
                 "pic": "img/locations/iss-nails.jpg",
                 "type": "Salon",
-                "rating": 5,
-                "location": "Sammamish"
+                "rating": 2.5,
+                "location": "Sammamish",
+                "tel": "(425) 868-8171"
             },
             {
                 "name": "Salon 074",
                 "pic": "img/locations/074salonlogo.png",
                 "type": "Salon",
-                "rating": 5,
-                "location": "Sammamish"
+                "rating": 4,
+                "location": "Sammamish",
+                "website": "https://salon074.com/",
+                "tel": "(425) 868-6220"
             }
         ],
         [
@@ -148,8 +208,10 @@
                 "name": "Moore Brothers Music",
                 "pic": "img/locations/moore brother.jpg",
                 "type": "Music",
-                "rating": 5,
-                "location": "Sammamish"
+                "rating": 3.5,
+                "location": "Sammamish",
+                "website": "https://moorebrothersmusic.com/",
+                "tel": "(425) 836-2263"
             }
         ]  
     ]

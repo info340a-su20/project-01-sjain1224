@@ -31,9 +31,13 @@ nav li{
     margin-right: 1rem;
 }
 
-nav a {
+nav a, .form-add {
     color: white;
     text-decoration: none;
+}
+
+.form-add {
+    cursor: pointer;
 }
 
 .web-name{
@@ -44,7 +48,7 @@ nav a {
     font-size: 1.25rem;
 }
 
-.nav-link {
+.nav-link, .form-add {
     display: none;
 }
 
@@ -154,6 +158,7 @@ footer > p{
     background-color: #004ba0;
     margin: 1em 1em;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .card > p{
@@ -182,18 +187,42 @@ footer > p{
     position: fixed; 
     left: 0;
     top: 0;
-    z-index: 1; /* Code from W3Schools on Modals */
+    z-index: 1; /* -Index code from W3Schools on Modals */
     width: 100%; 
     height: 100%;
     background-color: rgba(0,0,0,0.4); 
 }
 
-.modal-content {
+.modal-content, .add-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 25% auto;
     padding: 10px;
     border: 1px solid #888;
     width: 95%; /* For phone */
+    height: 75%;
+    overflow: auto;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    margin-top: 0;
+    text-align: center;
+}
+
+.modal-location {
+    font-size: 1.25rem;
+    font-style: italic;
+    text-align: center;
+    margin-top: 0;
+}
+
+.modal-img {
+    width: 100%;
+    height: auto;
+}
+
+.modal-contact {
+    font-size: 1.25rem;
 }
 
 /* Add a Business Form */
@@ -285,7 +314,7 @@ footer > p{
     background-color: #002571;
 }
 
-nav a:hover, nav a:focus{
+nav a:hover, nav a:focus, .form-add:hover, .form-add:focus{
     color: #66bb6a;
     border-bottom: #66bb6a solid .1rem;
 }
@@ -321,17 +350,67 @@ nav a:hover, nav a:focus{
 
 /* Responsive Design */
 @media (min-width: 598px) {
-    .nav-link {
+    .nav-link, .form-add {
         display: inline;
     }
 
     #hamburger-menu{
         display: none;
     }
+
+    .modal-content {
+        margin: 15% auto;
+        width: 75%;
+        height: 75%;
+        overflow: auto;
+    }
+
+    .modal-img {
+        height: 300px;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
 }
 
 @media (min-width: 768px) {
     .filter{
         display: inline;
+    }
+
+    .modal-content {
+        margin: 15% auto;
+        width: 75%;
+        height: 70%;
+        overflow: auto;
+    }
+
+    .modal-title {
+        font-size: 1.75rem;
+        margin-top: 0;
+        text-align: center;
+    }
+    
+    .modal-location, .modal-contact {
+        font-size: 1.5rem;
+    }
+
+    .card-body{
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .modal-content {
+        height: 65%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .modal-content {
+        margin: 10% auto;
+        width: 65%;
     }
 }

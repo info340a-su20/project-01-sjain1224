@@ -2,7 +2,7 @@
 
 const state = {
     data: {},
-    currentdata: [],
+    currentdata: {},
     filter: false
 }
 
@@ -28,7 +28,7 @@ function renderCard(busObj) {
     newCard.appendChild(busLoc);
 
     newCard.addEventListener('click', () => {
-        renderModelContent(busObj);
+        renderModalContent(busObj);
     })
 
     return newCard;
@@ -44,6 +44,8 @@ function renderSection(sectArray) {
         newSect.appendChild(aCard);
     }
 
+    //searchBusiness(sectArray, newSect)
+
     return newSect;
 }
 
@@ -52,8 +54,6 @@ function renderAll(allObj) {
 
     let display = document.createElement('div');
     display.classList.add('all-cards');
-
-    console.log(allObj);
 
     for(let section of allObj){       
         let sectHeader = document.createElement('h2');
@@ -69,54 +69,45 @@ function renderAll(allObj) {
     addAllCardObj.appendChild(display);
 }
 
-function searchBusiness(){
-    let searchCards = document.querySelector('#addCards');
+// function searchBusiness(sectionArray, parent){
+//     //console.log(parent);
+//     let searchBtn = document.querySelector('#search-btn');
+//     searchBtn.addEventListener('click', (event) => {
+//         event.preventDefault();
+//         let connectDOM = parent;
+//         state.filter = true;
+//         connectDOM.innerHTML = "";
+//         let userSearch = document.querySelector("#search-input");
+//         let restName = userSearch.value.toLowerCase();
+//         let counter = 0;
+//         sectionArray.filter(() => {
+//             for(let eachRest of sectionArray) {
+//                 let objName = eachRest.name.toLowerCase();
+//                 if (objName.includes(restName) == true){
+//                     counter = counter + 1;
+//                     let aCard = renderCard(eachRest)
+//                     parent.appendChild(aCard);
+//                 }
+//             }
+//             if (counter == 0){
+//                 let emptyMsg = document.createElement('p');
+//                 emptyMsg.textContent = "No " + sectionArray[0].type + " containing '" + restName + "' found.";
+//                 parent.appendChild(emptyMsg);
+//             }
+//         })
+//     })
 
-    let searchRes = document.createElement('div');
-    searchRes.classList.add('row');
-
-    let searchBtn = document.querySelector('#search-btn');
-    searchBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        state.filter = true;
-        searchCards.innerHTML = "";
-        let userSearch = document.querySelector("#search-input");
-        let restName = userSearch.value.toLowerCase();
-        let counter = 0;
-        let newArray = [];
-        for (let sectionArray of state.data.data) {
-            sectionArray.filter(() => {
-                for(let eachRest of sectionArray) {
-                    let objName = eachRest.name.toLowerCase();
-                    if (objName.includes(restName) == true){
-                        newArray.push(eachRest);
-                        counter = counter + 1;
-                        let aCard = renderCard(eachRest)
-                        searchRes.appendChild(aCard);
-                    }
-                }
-                if (counter == 0){
-                    let emptyMsg = document.createElement('p');
-                    emptyMsg.textContent = "No " + sectionArray[0].type + " containing '" + restName + "' found.";
-                    searchCards.appendChild(emptyMsg);
-                }
-                searchCards.appendChild(searchRes);
-            })
-        }
-        state.currentdata = newArray;
-        console.log(newArray)
-        renderSection(state.currentdata.data);
-    })
-
-    let resetBtn = document.querySelector('#reset-btn');
-    resetBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        state.filter = false;
-        state.currentdata = state.data;
-        searchCards.innerHTML = "";
-        renderAll(state.currentdata.data)
-    })
-}
+//     let resetBtn = document.querySelector('#reset-btn');
+//     resetBtn.addEventListener('click', (event) => {
+//         event.preventDefault();
+//         state.filter = false;
+//         parent.innerHTML = "";
+//         for(let each of sectionArray){
+//             let aCard = renderCard(each)
+//             parent.appendChild(aCard);
+//         }
+//     })
+// }
 
 function goToItems(allObj) {
     let goTo = document.querySelector('#go-to');
@@ -138,20 +129,96 @@ function goToItems(allObj) {
     }
 }
 
-function renderModelBg() {
-    let modalBackground = document.querySelector("#cardModal");
+function renderModalBg(selector) {
+    let modalBackground = document.querySelector(selector);
     modalBackground.style.display = "block";
     
-    modalBackground.addEventListener('click', (event) => {
+    modalBackground.addEventListener('click', () => {
         modalBackground.style.display = "none";
     })
 }
 
-function renderModelContent(cardObj) {
-    renderModelBg();
-    let modelContent = document.querySelector(".model-content");
+function renderModalContent(cardObj) {
+    let modalBgSelect = "#cardModal";
+    renderModalBg(modalBgSelect);
+    let modelContent = document.querySelector(".modal-content");
+    modelContent.innerHTML = "";
 
-    
+    let cardTitle = document.createElement('h1');
+    cardTitle.classList.add('modal-title');
+    cardTitle.textContent= cardObj.name;
+    modelContent.appendChild(cardTitle);
+
+    let cardLocation = document.createElement('p');
+    cardLocation.classList.add('modal-location');
+    cardLocation.textContent= cardObj.location;
+    modelContent.appendChild(cardLocation);
+
+    let cardImg = document.createElement('img');
+    cardImg.classList.add('modal-img');
+    cardImg.src = cardObj.pic;
+    cardImg.alt = cardObj.name;
+    modelContent.appendChild(cardImg);
+
+    let cardContact = document.createElement('h2');
+    cardContact.classList.add('modal-contact');
+    cardContact.textContent= 'Contact Info:';
+    modelContent.appendChild(cardContact);
+
+    let cardTel = document.createElement('p');
+    cardTel.classList.add("card-body");
+    let linkTel = document.createElement('a');
+    linkTel.href = "tel:" + cardObj.tel;
+    linkTel.textContent = cardObj.tel;
+    cardTel.appendChild(linkTel)
+    modelContent.appendChild(cardTel);
+
+    let cardURL = document.createElement('p');
+    cardURL.classList.add("card-body");
+    let linkURL = document.createElement('a');
+    linkURL.href = cardObj.website;
+    linkURL.textContent = cardObj.website;
+    cardURL.appendChild(linkURL);
+    modelContent.appendChild(cardURL);
+
+    let cardOther = document.createElement('h2');
+    cardOther.classList.add('modal-contact');
+    cardOther.textContent= 'Other Info:';
+    modelContent.appendChild(cardOther);
+
+    if ('menu' in cardObj){ 
+        let cardMenu = document.createElement('p');
+        cardMenu.classList.add("card-body");
+        let linkMenu = document.createElement('a');
+        linkMenu.href = cardObj.menu;
+        linkMenu.textContent = "Menu";
+        cardMenu.appendChild(linkMenu)
+        modelContent.appendChild(cardMenu);
+    }
+
+    if ('dining' in cardObj){ 
+        let cardDining = document.createElement('p');
+        cardDining.classList.add("card-body");
+        cardDining.textContent= "Dining Options: " + cardObj.dining;
+        modelContent.appendChild(cardDining);
+    }    
+
+    let cardRating = document.createElement('p');
+    cardRating.classList.add("card-body");
+    cardRating.textContent= "Yelp Rating: " + cardObj.rating + "/5 Stars";
+    modelContent.appendChild(cardRating);
+
+}
+
+function addBizModal() {
+    let getToForm = document.querySelector(".form-add");
+    getToForm.addEventListener('click', () => {
+        let addBizBgSelect = "#addBizModal";
+        renderModalBg(addBizBgSelect);
+
+        //let addBizContent = document.querySelector(".add-content");
+        //addBizContent.innerHTML = "";
+    })
 }
 
 fetch('data/business.json')
@@ -162,5 +229,6 @@ fetch('data/business.json')
         state.data = data;
         renderAll(data.data);
         goToItems(data.data);
-        searchBusiness();
+        //searchBusiness();
+        addBizModal();
     })
