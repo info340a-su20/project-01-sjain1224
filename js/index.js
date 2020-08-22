@@ -3,6 +3,7 @@
 const state = {
     data: {},
     currentdata: {},
+    bizAdded: [],
     filter: false
 }
 
@@ -129,20 +130,21 @@ function goToItems(allObj) {
     }
 }
 
-function renderModalBg(selector) {
+function renderModalBg(selector, exitDOM) {
     let modalBackground = document.querySelector(selector);
     modalBackground.style.display = "block";
-    
-    modalBackground.addEventListener('click', () => {
-        modalBackground.style.display = "none";
+
+    let exitBtn = document.querySelector(exitDOM)
+    exitBtn.addEventListener('click', () => {
+        document.querySelector(selector).style.display = "none";
     })
 }
 
 function renderModalContent(cardObj) {
     let modalBgSelect = "#cardModal";
-    renderModalBg(modalBgSelect);
-    let modelContent = document.querySelector(".modal-content");
+    let modelContent = document.querySelector(".content-after-exit");
     modelContent.innerHTML = "";
+    renderModalBg(modalBgSelect, ".exit-card");
 
     let cardTitle = document.createElement('h1');
     cardTitle.classList.add('modal-title');
@@ -169,6 +171,7 @@ function renderModalContent(cardObj) {
     cardTel.classList.add("card-body");
     let linkTel = document.createElement('a');
     linkTel.href = "tel:" + cardObj.tel;
+    linkTel.target = "_blank";
     linkTel.textContent = cardObj.tel;
     cardTel.appendChild(linkTel)
     modelContent.appendChild(cardTel);
@@ -177,6 +180,7 @@ function renderModalContent(cardObj) {
     cardURL.classList.add("card-body");
     let linkURL = document.createElement('a');
     linkURL.href = cardObj.website;
+    linkURL.target = "_blank";
     linkURL.textContent = cardObj.website;
     cardURL.appendChild(linkURL);
     modelContent.appendChild(cardURL);
@@ -190,6 +194,7 @@ function renderModalContent(cardObj) {
         let cardMenu = document.createElement('p');
         cardMenu.classList.add("card-body");
         let linkMenu = document.createElement('a');
+        linkMenu.target = "_blank";
         linkMenu.href = cardObj.menu;
         linkMenu.textContent = "Menu";
         cardMenu.appendChild(linkMenu)
@@ -214,11 +219,37 @@ function addBizModal() {
     let getToForm = document.querySelector(".form-add");
     getToForm.addEventListener('click', () => {
         let addBizBgSelect = "#addBizModal";
-        renderModalBg(addBizBgSelect);
-
-        //let addBizContent = document.querySelector(".add-content");
-        //addBizContent.innerHTML = "";
+        renderModalBg(addBizBgSelect, ".exit-biz");
     })
+
+    let submittedForm = document.querySelector(".submit-btn");
+    submittedForm.addEventListener('click', (event) => {
+        event.preventDefault();
+        renderNewItem();        
+    })
+}
+
+function renderNewItem() {
+    let newBizName = document.querySelector("#bus-name").value;
+    let newBizType = document.querySelector("#bus-type").value;
+    let newBizLoc = document.querySelector("#bus-location").value;
+
+    let showEntry = newBizName + " (" + newBizType + "), located in " + newBizLoc;
+    state.bizAdded.push(showEntry);
+    renderNewList();
+}
+
+function renderNewList() {
+    let addToList = document.querySelector(".user-list");
+    addToList.innerHTML = "";
+
+    for (let item of state.bizAdded){
+
+        let newListItem = document.createElement("li");
+        newListItem.textContent = item;
+
+        addToList.appendChild(newListItem);
+    }
 }
 
 fetch('data/business.json')
@@ -231,4 +262,10 @@ fetch('data/business.json')
         goToItems(data.data);
         //searchBusiness();
         addBizModal();
+    })
+    .catch(function(error){
+        let errorMsg = document.querySelector("#addCards");
+        let errorElem = document.createElement('p');
+        errorElem.textContent = error.message;
+        errorMsg.appendChild(errorElem);
     })

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Local Support - UDistrict</title>
+    <title>Local Support - Businesses</title>
     <meta name="author" content="Siddhant Jain">
     <meta name="description" content="A website helping people connect with local businesses">
     <meta charset="UTF-8">
@@ -24,8 +24,9 @@
         <ul>
             <li class="web-name"><a href="splash.html">Local Support </a></li>
             <li class="nav-link"><a href="index.html">Businesses</a></li>
-            <li class="form-add">Add</li>
-            <li class="nav-link"><a href="about.html">About</a></li>
+            <li class="form-add">Add a Business</li>
+            <!-- <li class="nav-link"><a href="about.html">About</a></li> -->
+            <li class="nav-link"><a href="splash.html">Splash</a></li>
         </ul>
         <div id="hamburger-menu"><a href="#"><i class="fa fa-bars" aria-label="menu"></i></a></div>
     </nav>
@@ -62,16 +63,61 @@
         <div id="cardModal" class="modal-card">
             
             <div class="modal-content">
+                <span class="exit-span">
+                    <button class="exit-card">Close</button>
+                </span>
+
+                <div class="content-after-exit">
+
+                </div>
                 
-              </div>
+            </div>
 
         </div>
 
         <div id="addBizModal" class="modal-card">
             
             <div class="add-content">
+                <span class="exit-span">
+                    <button class="exit-biz">Close</button>
+                </span>
+
+                <h1 class="addBizTitle">Add a Business</h1>
+                <p class="addBizSub">Know a local business not on this list? Fill out this form to have us add it!</p>
+                <section class="two-col">
+                    <div>
+                        <h2 class="form-title">Business Addition Form</h2>
+                        <form class= "form-area">
+                            <div class="form-field">
+                                <label for="bus-name">Business Name: </label> <input id="bus-name" type="text" placeholder="Business Name" name="busName">
+                            </div>
+            
+                            <div class="form-field">
+                                <label for="bus-type">Business Type: </label> <input type="text" id="bus-type" placeholder="Cafe" name="type">
+                            </div>
+            
+                            <div class="form-field">
+                                <label for="bus-location">Business Location: </label> <input type="text" id="bus-location" placeholder="UDistrict" name="location">
+                            </div>
+            
+                            <div class="form-field">
+                                <label for="info-field">Other Information:</label>
+                                <textarea class="form-control" name="information" id="info-field" placeholder="What else would you like us to know?"></textarea>
+                            </div>
+            
+                            <button type="submit" class="btn submit-btn">Submit</button>
+                        </form>
+                    </div>
+
+                    <div class="user-addition">
+                        <h2 class="form-title">You have added:</h2>
+                        <ol class="user-list">
+
+                        </ol>
+                    </div>
+                </section>
                 
-              </div>
+            </div>
 
         </div>
     </main>
