@@ -145,27 +145,33 @@ function renderModalContent(cardObj) {
     let modelContent = document.querySelector(".content-after-exit");
     modelContent.innerHTML = "";
     renderModalBg(modalBgSelect, ".exit-card");
-
-    let cardTitle = document.createElement('h1');
-    cardTitle.classList.add('modal-title');
-    cardTitle.textContent= cardObj.name;
-    modelContent.appendChild(cardTitle);
-
-    let cardLocation = document.createElement('p');
-    cardLocation.classList.add('modal-location');
-    cardLocation.textContent= cardObj.location;
-    modelContent.appendChild(cardLocation);
-
+    
+    let colOne = document.createElement('div');
+    colOne.classList.add('card-col-1');
     let cardImg = document.createElement('img');
     cardImg.classList.add('modal-img');
     cardImg.src = cardObj.pic;
     cardImg.alt = cardObj.name;
-    modelContent.appendChild(cardImg);
+    colOne.appendChild(cardImg);
+    modelContent.appendChild(colOne);
+
+    let colTwo = document.createElement('div');
+    colTwo.classList.add('card-col-2');
+
+    let cardTitle = document.createElement('h1');
+    cardTitle.classList.add('modal-title');
+    cardTitle.textContent= cardObj.name;
+    colTwo.appendChild(cardTitle);
+
+    let cardLocation = document.createElement('p');
+    cardLocation.classList.add('modal-location');
+    cardLocation.textContent= cardObj.location;
+    colTwo.appendChild(cardLocation);
 
     let cardContact = document.createElement('h2');
     cardContact.classList.add('modal-contact');
     cardContact.textContent= 'Contact Info:';
-    modelContent.appendChild(cardContact);
+    colTwo.appendChild(cardContact);
 
     let cardTel = document.createElement('p');
     cardTel.classList.add("card-body");
@@ -174,7 +180,7 @@ function renderModalContent(cardObj) {
     linkTel.target = "_blank";
     linkTel.textContent = cardObj.tel;
     cardTel.appendChild(linkTel)
-    modelContent.appendChild(cardTel);
+    colTwo.appendChild(cardTel);
 
     let cardURL = document.createElement('p');
     cardURL.classList.add("card-body");
@@ -183,12 +189,12 @@ function renderModalContent(cardObj) {
     linkURL.target = "_blank";
     linkURL.textContent = cardObj.website;
     cardURL.appendChild(linkURL);
-    modelContent.appendChild(cardURL);
+    colTwo.appendChild(cardURL);
 
     let cardOther = document.createElement('h2');
     cardOther.classList.add('modal-contact');
     cardOther.textContent= 'Other Info:';
-    modelContent.appendChild(cardOther);
+    colTwo.appendChild(cardOther);
 
     if ('menu' in cardObj){ 
         let cardMenu = document.createElement('p');
@@ -198,20 +204,22 @@ function renderModalContent(cardObj) {
         linkMenu.href = cardObj.menu;
         linkMenu.textContent = "Menu";
         cardMenu.appendChild(linkMenu)
-        modelContent.appendChild(cardMenu);
+        colTwo.appendChild(cardMenu);
     }
 
     if ('dining' in cardObj){ 
         let cardDining = document.createElement('p');
         cardDining.classList.add("card-body");
         cardDining.textContent= "Dining Options: " + cardObj.dining;
-        modelContent.appendChild(cardDining);
+        colTwo.appendChild(cardDining);
     }    
 
     let cardRating = document.createElement('p');
     cardRating.classList.add("card-body");
     cardRating.textContent= "Yelp Rating: " + cardObj.rating + "/5 Stars";
-    modelContent.appendChild(cardRating);
+    colTwo.appendChild(cardRating);
+
+    modelContent.appendChild(colTwo);
 
 }
 
