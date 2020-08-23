@@ -241,6 +241,16 @@ footer > p{
 }
 
 /* Add a Business Form */
+
+label, input {
+    display: inline-block; /* This line to align forms came from https://stackoverflow.com/questions/13204002/align-form-elements-in-css */
+}
+
+label {
+    width: 100%;
+    text-align: left;
+}
+
 .form-title, .form-area{
     margin-left: 1rem;
 }
@@ -375,7 +385,6 @@ nav a:hover, nav a:focus, .form-add:hover, .form-add:focus{
 
 .filter-options a:hover, .filter-options a:focus{
     color: #004ba0;
-    font-size: 1.2rem;
 }
 
 .card:hover, .card:focus{

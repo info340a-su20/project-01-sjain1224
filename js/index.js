@@ -1,12 +1,14 @@
 'use strict';
 
 const state = {
-    data: {},
-    currentdata: {},
-    bizAdded: [],
-    filter: false
+    data: {}, //keeps record of original data
+    currentdata: {}, //changes based on user input
+    bizAdded: [], //businesses Added by user
+    countAdded: 0, //number of Businesses the user added
+    filter: false // checks to see if the search is active
 }
 
+//renders a single business' card
 function renderCard(busObj) {
     let newCard = document.createElement('div');
     newCard.classList.add('card');
@@ -35,6 +37,7 @@ function renderCard(busObj) {
     return newCard;
 }
 
+//renders a Section (cafe, music, etc)
 function renderSection(sectArray) {
 
     let newSect = document.createElement('div');
@@ -50,21 +53,30 @@ function renderSection(sectArray) {
     return newSect;
 }
 
+// renders all cards
 function renderAll(allObj) {
     let addAllCardObj = document.querySelector('#addCards');
+    addAllCardObj.innerHTML = "";
 
     let display = document.createElement('div');
     display.classList.add('all-cards');
 
     for(let section of allObj){       
         let sectHeader = document.createElement('h2');
-        sectHeader.textContent = section[0].type;
-        let setID = section[0].type.replace(/\s+/g, ''); //Cleans up whitespaces in words/ business names. Code from W3schools
-        sectHeader.setAttribute("id", setID.toLowerCase());
-        display.appendChild(sectHeader);
-        
+
+        if ('verify' in section[0]){  //if user added a card
+            sectHeader.textContent = "User Added Cards";
+            sectHeader.setAttribute("id", "#useradded");
+            display.appendChild(sectHeader);
+        } else {
+            sectHeader.textContent = section[0].type;
+            let setID = section[0].type.replace(/\s+/g, ''); //Cleans up whitespaces in words/ business names. Code from W3schools
+            sectHeader.setAttribute("id", setID.toLowerCase());
+            display.appendChild(sectHeader);
+        }
+
         let aSect = renderSection(section)
-        display.appendChild(aSect);
+            display.appendChild(aSect);
     }
 
     addAllCardObj.appendChild(display);
@@ -110,8 +122,10 @@ function renderAll(allObj) {
 //     })
 // }
 
+//generates the go to sections on the left bar based on the sections rendered by the data
 function goToItems(allObj) {
     let goTo = document.querySelector('#go-to');
+    goTo.innerHTML = "";
 
     for(let sectionNames of allObj){       
         let sectFilter = document.createElement('li');
@@ -120,8 +134,13 @@ function goToItems(allObj) {
         let addLink = document.createElement('a');
         addLink.textContent = sectionNames[0].type;
 
-        let setID = sectionNames[0].type.replace(/\s+/g, '');
-        addLink.href = '#' + setID.toLowerCase();
+        if ('verify' in sectionNames[0]){ 
+            addLink.textContent = "User Added";
+            addLink.href = "#useradded";
+        } else {
+            let setID = sectionNames[0].type.replace(/\s+/g, '');
+            addLink.href = '#' + setID.toLowerCase();
+        }
 
         sectFilter.appendChild(addLink);
         //console.log(sectFilter);
@@ -130,6 +149,7 @@ function goToItems(allObj) {
     }
 }
 
+// creates darkened background for Modal display
 function renderModalBg(selector, exitDOM) {
     let modalBackground = document.querySelector(selector);
     modalBackground.style.display = "block";
@@ -140,6 +160,7 @@ function renderModalBg(selector, exitDOM) {
     })
 }
 
+//makes the modal for the selected business
 function renderModalContent(cardObj) {
     let modalBgSelect = "#cardModal";
     let modelContent = document.querySelector(".content-after-exit");
@@ -167,6 +188,13 @@ function renderModalContent(cardObj) {
     cardLocation.classList.add('modal-location');
     cardLocation.textContent= cardObj.location;
     colTwo.appendChild(cardLocation);
+
+    if ('verify' in cardObj){ 
+        let needVerify = document.createElement('h2');
+        needVerify.classList.add("modal-contact");
+        needVerify.textContent= "User Added: Business Unverified";
+        colTwo.appendChild(needVerify);
+    }
 
     let cardContact = document.createElement('h2');
     cardContact.classList.add('modal-contact');
@@ -214,15 +242,18 @@ function renderModalContent(cardObj) {
         colTwo.appendChild(cardDining);
     }    
 
-    let cardRating = document.createElement('p');
-    cardRating.classList.add("card-body");
-    cardRating.textContent= "Yelp Rating: " + cardObj.rating + "/5 Stars";
-    colTwo.appendChild(cardRating);
+    if ('rating' in cardObj){ 
+        let cardRating = document.createElement('p');
+        cardRating.classList.add("card-body");
+        cardRating.textContent= "Yelp Rating: " + cardObj.rating + "/5 Stars";
+        colTwo.appendChild(cardRating);
+    }
 
     modelContent.appendChild(colTwo);
 
 }
 
+// creates the Add Business Modal
 function addBizModal() {
     let getToForm = document.querySelector(".form-add");
     getToForm.addEventListener('click', () => {
@@ -237,16 +268,31 @@ function addBizModal() {
     })
 }
 
+//rerenders both the modal and the main page based on new cards (all user added cards go to the bottom)
 function renderNewItem() {
     let newBizName = document.querySelector("#bus-name").value;
     let newBizType = document.querySelector("#bus-type").value;
     let newBizLoc = document.querySelector("#bus-location").value;
 
+    let newRenderItem = {name: newBizName, type: newBizType, location: newBizType, pic: "img/locations/Placeholder.jpg",verify: false};
+    state.currentdata = state.data;
+    if (state.countAdded == 0) {
+        state.currentdata.data.push([newRenderItem]);
+        renderAll(state.currentdata.data);
+    } else {
+        let pointer = state.currentdata.data;
+        pointer[pointer.length - 1].push(newRenderItem);
+        renderAll(pointer);
+    }
+    state.countAdded = state.countAdded + 1;
+    goToItems(state.currentdata.data);
+
     let showEntry = newBizName + " (" + newBizType + "), located in " + newBizLoc;
     state.bizAdded.push(showEntry);
-    renderNewList();
+    renderNewList(state.currentdata.data);
 }
 
+//on Business Add model, renders a list of added business on the left (or below if on smaller screen or line length too long)
 function renderNewList() {
     let addToList = document.querySelector(".user-list");
     addToList.innerHTML = "";
