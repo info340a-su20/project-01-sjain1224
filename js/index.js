@@ -268,7 +268,7 @@ function addBizModal() {
     })
 }
 
-// creates the Add Business Modal
+// creates the Hamburger Menu Modal
 function hamModal() {
     let openHam = document.querySelector("#hamburgerMenu");
     openHam.addEventListener('click', () => {
