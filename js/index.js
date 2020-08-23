@@ -268,6 +268,15 @@ function addBizModal() {
     })
 }
 
+// creates the Add Business Modal
+function hamModal() {
+    let openHam = document.querySelector("#hamburgerMenu");
+    openHam.addEventListener('click', () => {
+        let hamBgSelect = "#hamModal";
+        renderModalBg(hamBgSelect, ".exit-ham");
+    })
+}
+
 //rerenders both the modal and the main page based on new cards (all user added cards go to the bottom)
 function renderNewItem() {
     let newBizName = document.querySelector("#bus-name").value;
@@ -316,6 +325,7 @@ fetch('data/business.json')
         goToItems(data.data);
         //searchBusiness();
         addBizModal();
+        hamModal();
     })
     .catch(function(error){
         let errorMsg = document.querySelector("#addCards");

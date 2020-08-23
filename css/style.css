@@ -52,15 +52,30 @@ nav a, .form-add {
     display: none;
 }
 
-#hamburger-menu{
+#hamburgerMenu{
     font-size: 1em;
     height: 1.5em;
     text-decoration: none;
+    color: white;
+    cursor: pointer;
 }
 
 .web-name a{
     color: #66bb6a;
     border-bottom: none;
+}
+
+.ham-nav {
+    display: block;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color:  #66bb6a;
+    font-size: 1.5rem;
+}
+
+.ham-nav a {
+    color:  white;
+    text-decoration: none;
 }
 
 /* Header */
@@ -199,7 +214,7 @@ footer > p{
     padding: 10%;
 }
 
-.modal-content, .add-content {
+.modal-content, .add-content, .ham-modal-content {
     background-color: #fefefe;
     margin-top: 10%;
     padding: 10px;
@@ -266,11 +281,11 @@ label {
     border-radius: 5px;
 }
 
-.addBizTitle {
+.add-biz-title {
     margin-top: 1rem;
 }
 
-.addBizSub {
+.add-biz-sub {
     text-align: center;
 }
 
@@ -278,7 +293,7 @@ label {
     width: 100%;
 }
 
-.exit-biz, .exit-card {
+.exit-biz, .exit-card, .exit-ham {
     background-color: darkred;
     color: white;
     cursor: pointer;
@@ -290,7 +305,7 @@ label {
     flex-wrap: wrap;
 }
 
-.addBizForm {
+.add-biz-form {
     margin-right: 50px;
 }
 
@@ -400,8 +415,12 @@ nav a:hover, nav a:focus, .form-add:hover, .form-add:focus{
     color: #004ba0;
 }
 
-.exit-biz:hover, .exit-biz:focus,.exit-card:hover, .exit-card:focus {
+.exit-biz:hover, .exit-biz:focus,.exit-card:hover, .exit-card:focus, .exit-ham:hover, .exit-ham:focus {
     background-color: #400000;
+}
+
+.ham-nav a:hover {
+    color:  #004ba0;
 }
 
 /* Responsive Design */
@@ -410,7 +429,7 @@ nav a:hover, nav a:focus, .form-add:hover, .form-add:focus{
         display: inline;
     }
 
-    #hamburger-menu{
+    #hamburgerMenu{
         display: none;
     }
 
